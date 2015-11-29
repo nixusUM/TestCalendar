@@ -30,9 +30,12 @@ public class MonthFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-
+        long day = (1000 * 60 * 60 * 24);
+        long time = day * 364;
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.YEAR, 2015);
+        calendar.setTimeInMillis(time);
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.set(Calendar.YEAR, 2015);
         calendar.set(Calendar.MONTH, pageNumber);
         calendar.set(Calendar.DAY_OF_MONTH, 1);
         int days = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
